@@ -20,7 +20,17 @@ The project showcases **practical DevOps implementation** using Kubernetes, Terr
 
 ## 📦 Microservices
 
-adservice, cartservice, checkoutservice, currencyservice, emailservice, frontend, loadgenerator, paymentservice, productcatalogservice, recommendationservice, shippingservice
+- adservice
+= cartservice
+- checkoutservice
+- currencyservice
+- emailservice
+- frontend
+- loadgenerator
+- paymentservice
+- productcatalogservice
+- recommendationservice
+- shippingservice
 
 Each microservice is built, versioned, and deployed independently.
 
@@ -33,7 +43,19 @@ Each microservice is built, versioned, and deployed independently.
 - Kubernetes deployment manifests updated via Git
 - Argo CD continuously syncs application state to AWS EKS
 
-_Screenshots included for Jenkins pipelines, Argo CD dashboard, and running application._
+_Jenkins pipelines_ 
+
+<img width="1895" height="1090" alt="Screenshot 2026-02-07 225706" src="https://github.com/user-attachments/assets/73e729ef-7b25-4b15-bee3-78122f511dff" />
+
+<img width="1919" height="1086" alt="Screenshot 2026-02-07 230627" src="https://github.com/user-attachments/assets/5c0f8d8c-dc48-408b-98fc-cdd699692528" />
+
+<img width="1911" height="1087" alt="Screenshot 2026-02-07 225338" src="https://github.com/user-attachments/assets/1954daf9-e264-460e-b287-ce40fe0ff33e" />
+
+_Argo CD dashboard_ 
+
+<img width="1919" height="1094" alt="Screenshot 2026-02-07 225508" src="https://github.com/user-attachments/assets/58b10e02-63a2-4d87-992e-a58d332e19c4" />
+
+<img width="1917" height="1084" alt="Screenshot 2026-02-07 225428" src="https://github.com/user-attachments/assets/b83eb136-fc8d-49a2-95e5-fae7db2cbe91" />
 
 ---
 
@@ -41,7 +63,7 @@ _Screenshots included for Jenkins pipelines, Argo CD dashboard, and running appl
 
 The application is exposed through an **AWS Application Load Balancer** and accessed via a public domain configured using **Route 53**.
 
-_Screenshots included for the live application UI._
+_Live application UI._
 
 <img width="1907" height="1092" alt="Screenshot 2026-02-07 225403" src="https://github.com/user-attachments/assets/e9d5debf-dcd5-418d-8c48-e2c0ea8e045d" />
 
@@ -54,7 +76,3 @@ This project is built to demonstrate **real-world DevOps skills**, including:
 - Infrastructure as Code with Terraform
 - CI/CD automation using Jenkins
 - GitOps workflows using Argo CD on AWS
-
-
-## 🏗️ Repository Structure
-
