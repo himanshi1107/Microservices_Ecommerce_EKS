@@ -51,6 +51,7 @@ _Jenkins pipelines_
 
 <img width="1911" height="1087" alt="Screenshot 2026-02-07 225338" src="https://github.com/user-attachments/assets/1954daf9-e264-460e-b287-ce40fe0ff33e" />
 
+
 _Argo CD dashboard_ 
 
 <img width="1919" height="1094" alt="Screenshot 2026-02-07 225508" src="https://github.com/user-attachments/assets/58b10e02-63a2-4d87-992e-a58d332e19c4" />
