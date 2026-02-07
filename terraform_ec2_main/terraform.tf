@@ -1,17 +1,20 @@
 terraform {
   required_providers {
-    aws = {
+    aws ={
         source = "hashicorp/aws"
-        version = ">= 5.25.0"
+        version = ">=5.25.0"
     }
   }
 
   backend "s3" {
-    bucket = "ecommerce_data2"
-    key = "k8/terraform.tfstate"
+    bucket = "ecommerce_data1"
+    key = "ec2/terraform.tfstate"
     region = "us-east-1"
   }
-  
+
   required_version = ">= 1.6.3"
-  
+}
+
+provider "aws" {
+  region = "us-wast-1"
 }

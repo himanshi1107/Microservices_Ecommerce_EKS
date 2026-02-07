@@ -1,41 +1,15 @@
-provider "aws" {
-  region = "us-east-1"  # Change as needed
-}
-
-locals {
-  services = [
-    "emailservice",
-    "checkoutservice",
-    "recommendationservice",
-    "frontend",
-    "paymentservice",
-    "productcatalogservice",
-    "cartservice",
-    "loadgenerator",
-    "currencyservice",
-    "shippingservice",
-    "adservice"
-  ]
-}
-
-resource "aws_ecr_repository" "services" {
-  for_each = toset(local.services)
-
-  name = each.value
-
-  image_scanning_configuration {
-    scan_on_push = true
+terraform {
+  required_providers {
+    aws ={
+        source = "hashicorp/aws"
+        version = ">= 5.25.0"
+    }
   }
 
-  encryption_configuration {
-    encryption_type = "AES256"
+  backend "s3" {
+    bucket = "ecommerce_data2"
+    key = "ecr/terraform.tfstate"
+    region = "us-east-1"
   }
-
-  # ✅ This line tells AWS to delete all images before deleting the repo
-  force_delete = true
-
-  tags = {
-    Environment = "production"
-    Service     = each.value
-  }
+  required_version = ">= 1.6.3"
 }

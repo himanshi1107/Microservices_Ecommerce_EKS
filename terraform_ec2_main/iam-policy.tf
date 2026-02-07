@@ -1,20 +1,19 @@
 resource "aws_iam_policy" "eks_policy" {
-  name        = "eks_policy"
-  description = "Custom policy for EKS full access"
-  policy      = <<EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "eks:*",
-            "Resource": "*"
-        }
-    ]
+  name = "eks-policy"
+  description = "Custom Policy for EKS Full Access"
+  policy = <<EOF
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Effect": "Allow",
+                "Action": "eks:*",
+                "Resource": "*"
+            }
+        ]
+    }
+  EOF
 }
-EOF
-}
-
 resource "aws_iam_role_policy_attachment" "eks_policy_attachment" {
   role       = aws_iam_role.iam-role.name
   policy_arn = aws_iam_policy.eks_policy.arn

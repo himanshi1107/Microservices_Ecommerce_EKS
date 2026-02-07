@@ -1,17 +1,39 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 5.25.0"
-    }
-  }
-
-  backend "s3" {
-    bucket = "aluruarumullaa2"
-    key    = "ecr/terraform.tfstate"
-    region = "us-east-1"
-  }
-
-  required_version = ">= 1.6.3"
+provider "aws" {
+  region = "us-east-1"
 }
 
+locals {
+  services = [
+    "emailservice",
+    "checkoutservice",
+    "recommendationservice",
+    "frontend",
+    "paymentservice",
+    "productcatalogservice",
+    "cartservice",
+    "loadgenerator",
+    "currencyservice",
+    "shippingservice",
+    "adservice"
+  ]
+}
+
+resource "aws_ecr_repository" "services" {
+  for_each = toset(local.services)
+
+  name = each.value
+
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+  encryption_configuration {
+    encryption_type = true
+  }
+
+  force_delete = true
+
+  tags = {
+    Environment = "production"
+    Service = each.value
+  }
+}

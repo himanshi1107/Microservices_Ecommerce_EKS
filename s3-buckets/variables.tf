@@ -1,17 +1,17 @@
 variable "bucket1_name" {
-  description = "Name of the first S3 bucket"
-  type        = string
-  default     = "aluruarumullaa1"
+  description = "Name of 1st Bucket"
+  type = string
+  default = "ecommerce_data1"
 }
 
 variable "bucket2_name" {
-  description = "Name of the second S3 bucket"
-  type        = string
-  default     = "arumullaaluruu1"
+  description = "Name of 2nd Bucket"
+  type = string
+  default = "ecommerce_data2"
 }
 
 variable "environment" {
-  description = "Environment tag for the buckets"
-  type        = string
-  default     = "dev"
+  description = "Environmet Tags for Buckets"
+  type = string
+  default = "dev"
 }
