@@ -27,7 +27,7 @@ resource "aws_ecr_repository" "services" {
     scan_on_push = true
   }
   encryption_configuration {
-    encryption_type = true
+    encryption_type = "AES256"
   }
 
   force_delete = true
