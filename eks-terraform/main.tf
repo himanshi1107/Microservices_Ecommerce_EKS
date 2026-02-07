@@ -8,7 +8,7 @@ provider "aws" {
 resource "aws_iam_role" "master" {
   name = "app-eks-master1"
 
-  assume_role_policy = jsondecode({
+  assume_role_policy = jsonencode({
     Version = "2012-10-17",
     Statement = [{
       Effect = "Allow",
@@ -19,6 +19,7 @@ resource "aws_iam_role" "master" {
     }]
   })
 }
+
 
 resource "aws_iam_role_policy_attachment" "AmazonEKSClusterPolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
