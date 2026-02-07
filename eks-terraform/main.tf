@@ -114,7 +114,7 @@ resource "aws_iam_instance_profile" "worker" {
 # ----------------------------
 data "aws_vpc" "main" {
   tags = {
-    Name = "Server-vpc"
+    Name = "server-vpc"
   }
 }
 
@@ -130,7 +130,7 @@ data "aws_subnet" "subnet-2" {
   vpc_id = data.aws_vpc.main.id
   filter {
     name   = "tag:Name"
-    values = ["Public-subnet2"]
+    values = ["Public-Subnet-2"]
   }
 }
 
@@ -138,7 +138,7 @@ data "aws_security_group" "selected" {
   vpc_id = data.aws_vpc.main.id
   filter {
     name   = "tag:Name"
-    values = ["Server-sg"]
+    values = ["server-security-grp"]
   }
 }
 
